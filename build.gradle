@@ -1,0 +1,26 @@
+plugins {
+	id 'org.springframework.boot' version '2.6.9'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'com.MqAndCammel'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.7.0'
+	implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.13.3'
+	implementation group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-xml', version: '2.13.3'
+	implementation group: 'org.apache.camel.springboot', name: 'camel-spring-boot-starter', version: '3.18.0'
+	implementation group: 'org.apache.camel.springboot', name: 'camel-jackson-starter', version: '3.18.0'
+	implementation group: 'org.apache.camel.springboot', name: 'camel-activemq-starter', version: '3.18.0'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
